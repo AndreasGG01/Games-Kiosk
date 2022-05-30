@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+    fx:controller="controller.CustomerRecordController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0"
+>
+
+    <HBox alignment="center_left" spacing="10">
+            <children> 
+                <ImageView pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@game_icon.png"/>
+                    </image>
+                </ImageView>
+                <Label styleClass="h1" text="Customer Record" />
+            </children>
+        </HBox> 
+    <HBox alignment="center" spacing="10">
+        <Label text="Customer ID:" />
+        <TextField fx:id="idTf" text="" />
+        <Button fx:id="selectCustomerBtn" styleClass="button" text="Select Customer" disable="true" onAction="#selectCustomer"/> 
+    </HBox>
+    <Text fx:id="customerTxt" text="" />
+    <Label styleClass="h2" text="Rented Games" />
+    <TableView fx:id="RentedGamesTv" prefWidth="200" prefHeight="150" >
+        <columns> 
+            <TableColumn text="Title">
+                <cellValueFactory><PropertyValueFactory property="title"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Year">
+                <cellValueFactory><PropertyValueFactory property="year"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Genre">
+                <cellValueFactory><PropertyValueFactory property="genre"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Price">
+                <cellValueFactory><PropertyValueFactory property="price"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Label styleClass="h2" text="Rented History" />
+    <TableView fx:id="RentedHistoryGamesTv" prefWidth="200" prefHeight="150" >
+        <columns> 
+            <TableColumn text="Title">
+                <cellValueFactory><PropertyValueFactory property="title"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Year">
+                <cellValueFactory><PropertyValueFactory property="year"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Genre">
+                <cellValueFactory><PropertyValueFactory property="genre"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Price">
+                <cellValueFactory><PropertyValueFactory property="price"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button styleClass="button" text="Close" onAction="#closeCustomerRecord"/>
+    
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>

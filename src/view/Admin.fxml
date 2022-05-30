@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+    fx:controller="controller.AdminController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0"
+>
+
+    <HBox alignment="center_left" spacing="10">
+        <children> 
+            <ImageView pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@game_icon.png"/>
+                </image>
+            </ImageView>
+            <Label styleClass="h1" text="Administration Menu" />
+        </children>
+    </HBox>
+    <GridPane alignment="center" hgap="10" vgap="10">
+            <Label styleClass="h2" text="Manage Customers:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label styleClass="h2" text="Manage Games:" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Button styleClass="menuButton" text="View All" onAction="#openShowAllCustomers" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Button styleClass="menuButton" text="View All" onAction="#openShowAllGames" GridPane.columnIndex="1" GridPane.rowIndex="1"/> 
+            <Button styleClass="menuButton" text="Add" onAction="#openAddCustomer" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Button styleClass="menuButton" text="Add" onAction="#openAddGame" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Button styleClass="menuButton" text="Remove" onAction="#openRemoveCustomer" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <Button styleClass="menuButton" text="Remove" onAction="#openRemoveGame" GridPane.columnIndex="1" GridPane.rowIndex="3"/>           
+    </GridPane>
+
+    <Button styleClass="button" text="Exit" onAction="#exitAdmin" />
+    
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+
+</VBox>

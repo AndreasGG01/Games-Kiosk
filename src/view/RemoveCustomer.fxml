@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.RemoveCustomerController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0"
+>
+    <HBox alignment="center_left" spacing="10">
+            <children> 
+                <ImageView pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@game_icon.png"/>
+                    </image>
+                </ImageView>
+                <Label styleClass="h1" text="Remove Customer" />
+            </children>
+        </HBox> 
+    <TableView fx:id="customersTv" prefWidth="200" prefHeight="300" >
+        <columns> 
+            <TableColumn text="ID">
+                <cellValueFactory><PropertyValueFactory property="Id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Name">
+                <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Balance">
+                <cellValueFactory><PropertyValueFactory property="balance"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button styleClass="button" text="Remove Customer" onAction="#handleRemoveCustomer"/>
+    <Button styleClass="button" text="Exit" onAction="#closeRemoveCustomer"/>
+
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>

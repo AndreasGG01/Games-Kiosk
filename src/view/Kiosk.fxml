@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.KioskController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0"
+>
+    <HBox alignment="center_left" spacing="10">
+        <children> 
+            <ImageView pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@game_icon.png"/>
+                </image>
+            </ImageView>
+            <Label styleClass="h1" text="Game Kiosk" />
+        </children>
+    </HBox> 
+    <HBox alignment="center_right" spacing="10">
+        <Button styleClass="button" text="Administration" onAction="#handleOpenAdmin"/>
+    </HBox>
+    <HBox alignment="center" spacing="10">
+        <Button styleClass="largeButton" text="${'Explore\nCatalogue'}" onAction="#handleOpenCatalogue"/>
+        <Button styleClass="largeButton" text="${'Customer\nRecord'}" onAction="#handleOpenCustomerRecord"/>
+        <Button styleClass="largeButton" text="${'Top-up\nAccount'}" onAction="#handleOpenTopUpAccount"/>
+        <Button styleClass="largeButton" text="${'Favourite\nGames'}" onAction="#handleOpenFavouriteGames"/>    
+    </HBox> 
+    <Button styleClass="button" text="Exit" onAction="#exitKiosk" />
+
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+
+</VBox>
